@@ -1,0 +1,5 @@
+<resources>
+  <string name="app_name">Eniro Application</string>
+  <string name="api_base_url">https://newsapi.org/v2/</string>
+  <string name="api_key">c7f62fa735ca4696a6dd0c08f5e3028d</string>
+</resources>

@@ -45,8 +45,11 @@ class ListAdapter(owner: LifecycleOwner,
         fun bind(item: News, listener: (String) -> Unit, imageLoader: ImageLoader){
             view.tv_item_title.text = item.title
             view.tv_item_desc.text = item.description
-            view.tv_item_date.text = item.date.toString()
-            imageLoader.load(item.thumbnail, view.iv_item_image)
+            view.tv_item_date.text = item.date
+            item.thumbnail?.let {
+                view.iv_item_image.visibility = View.VISIBLE
+                imageLoader.load(it, view.iv_item_image)
+            }
             view.setOnClickListener { listener(item.content) }
         }
     }
